@@ -1,4 +1,5 @@
 import React from "react";
+import Tooltip from "../components/UI/Tooltip";
 
 function Screen() {
   return (
@@ -14,6 +15,7 @@ function Screen() {
       <div className="btnsContainer">
         <div>
           <button className="btn">Button 3</button>
+          <Tooltip />
         </div>
       </div>
       <div className="btnsContainer">
