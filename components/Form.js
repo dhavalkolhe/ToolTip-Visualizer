@@ -1,10 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { AppContext } from "../context/AppContextProvider.js";
 
 // UI Import
 import Input from "./UI/Input";
 import Select from "./UI/Select";
 
 function Form() {
+  // importing context
+  const {
+    button1Properties,
+    button2Properties,
+    button3Properties,
+    button4Properties,
+    button5Properties,
+    setButton1Properties,
+    setButton2Properties,
+    setButton3Properties,
+    setButton4Properties,
+    setButton5Properties,
+  } = useContext(AppContext);
+
   //   Options
   const buttonOptions = [
     { text: "Button 1", value: "btn1" },
@@ -29,17 +44,172 @@ function Form() {
   });
 
   //   Handling form changes
-  const handleChange = () => {
-    console.log("Button toggled");
+  const handleTargetBtnChange = (e) => {
+    // set previously active button to false
+    switch (Number(activeButton.slice(-1))) {
+      case 1:
+        setButton1Properties((prev) => {
+          return {
+            ...prev,
+            isButtonActive: false,
+          };
+        });
+        break;
+      case 2:
+        setButton2Properties((prev) => {
+          return {
+            ...prev,
+            isButtonActive: false,
+          };
+        });
+        break;
+      case 3:
+        setButton3Properties((prev) => {
+          return {
+            ...prev,
+            isButtonActive: false,
+          };
+        });
+        break;
+      case 4:
+        setButton4Properties((prev) => {
+          return {
+            ...prev,
+            isButtonActive: false,
+          };
+        });
+        break;
+      case 5:
+        setButton5Properties((prev) => {
+          return {
+            ...prev,
+            isButtonActive: false,
+          };
+        });
+        break;
+    }
+
+    const targetBtn = e.target.value;
+    setActiveButton(targetBtn);
+
+    //set new active button to true in context
+    switch (Number(targetBtn.slice(-1))) {
+      case 1:
+        setButton1Properties((prev) => {
+          return {
+            ...prev,
+            isButtonActive: true,
+          };
+        });
+        break;
+      case 2:
+        setButton2Properties((prev) => {
+          return {
+            ...prev,
+            isButtonActive: true,
+          };
+        });
+        break;
+      case 3:
+        setButton3Properties((prev) => {
+          return {
+            ...prev,
+            isButtonActive: true,
+          };
+        });
+        break;
+      case 4:
+        setButton4Properties((prev) => {
+          return {
+            ...prev,
+            isButtonActive: true,
+          };
+        });
+        break;
+      case 5:
+        setButton5Properties((prev) => {
+          return {
+            ...prev,
+            isButtonActive: true,
+          };
+        });
+        break;
+    }
+    // Fetch Data of Active button from context and fill the form
+    // use swithc case
+    switch (Number(targetBtn.slice(-1))) {
+      case 1:
+        setFormData(() => {
+          return { ...button1Properties };
+        });
+        break;
+      case 2:
+        setFormData(() => {
+          return { ...button2Properties };
+        });
+        break;
+      case 3:
+        setFormData(() => {
+          return { ...button3Properties };
+        });
+        break;
+      case 4:
+        setFormData(() => {
+          return { ...button4Properties };
+        });
+        break;
+      case 5:
+        setFormData(() => {
+          return { ...button5Properties };
+        });
+        break;
+    }
   };
 
   const handleInputChange = (name, val) => {
-    console.log(name);
     setFormData((prev) => {
-      return {
+      const updatedFormData = {
         ...prev,
         [name]: val,
       };
+
+      // Update button properties based on active button
+      switch (Number(activeButton.slice(-1))) {
+        case 1:
+          setButton1Properties((prev) => ({
+            ...prev,
+            ...updatedFormData,
+          }));
+          break;
+        case 2:
+          setButton2Properties((prev) => ({
+            ...prev,
+            ...updatedFormData,
+          }));
+          break;
+        case 3:
+          setButton3Properties((prev) => ({
+            ...prev,
+            ...updatedFormData,
+          }));
+          break;
+        case 4:
+          setButton4Properties((prev) => ({
+            ...prev,
+            ...updatedFormData,
+          }));
+          break;
+        case 5:
+          setButton5Properties((prev) => ({
+            ...prev,
+            ...updatedFormData,
+          }));
+          break;
+        default:
+          break;
+      }
+
+      return updatedFormData; // Update the formData state
     });
   };
 
@@ -51,7 +221,7 @@ function Form() {
           <Select
             value={activeButton}
             options={buttonOptions}
-            onChange={handleChange}
+            onChange={handleTargetBtnChange}
           />
         </div>
         <div>

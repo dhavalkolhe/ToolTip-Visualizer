@@ -1,14 +1,13 @@
 "use client";
-import AppContext from "../context/AppContext";
 
+import React from "react";
+import AppContextProvider from "../context/AppContextProvider";
 import Form from "../components/Form";
 
-export default function Home() {
+export default function Home({ Component, pageProps }) {
   return (
-    <AppContext.Provider>
-      <div>
-        <Form />
-      </div>
-    </AppContext.Provider>
+    <AppContextProvider>
+      <Form {...pageProps} />
+    </AppContextProvider>
   );
 }
