@@ -214,68 +214,67 @@ function Form() {
   };
 
   return (
-    <form>
-      <div>
-        <div>
-          <div>Target Element</div>
-          <Select
-            value={activeButton}
-            options={buttonOptions}
-            onChange={handleTargetBtnChange}
+    <form className="w-[90%] mx-auto flex flex-col">
+      <div className="input_container mt-4">
+        <div className="heading">Target Element</div>
+        <Select
+          value={activeButton}
+          options={buttonOptions}
+          onChange={handleTargetBtnChange}
+        />
+      </div>
+      <div className="input_container">
+        <div className="heading">ToolTip Text</div>
+        <Input
+          value={formData.text}
+          placeholder="Enter Tooltip Text"
+          type="text"
+          name="text"
+          onChange={handleInputChange}
+          id="tooltiptext"
+        />
+      </div>
+
+      {/* Flex row comps */}
+      <div className="flex justify-between">
+        <div className="input_container">
+          <div className="heading">Text Size</div>
+          <Input
+            value={formData.size}
+            placeholder="Enter Size (px)"
+            type="number"
+            name="size"
+            onChange={handleInputChange}
+            id="tooltipSize"
           />
         </div>
-        <div>
-          <div>ToolTip Text</div>
+        <div className="input_container">
+          <div className="heading">Padding</div>
           <Input
-            value={formData.text}
-            placeholder="Enter Tooltip Text"
-            type="text"
-            name="text"
+            value={formData.padding}
+            placeholder="Enter Padding (px)"
+            type="number"
+            name="padding"
             onChange={handleInputChange}
-            id="tooltiptext"
-          />
-        </div>
-
-        {/* Flex row comps */}
-        <div>
-          <div>
-            <div>Text Size</div>
-            <Input
-              value={formData.size}
-              placeholder="Enter Size (px)"
-              type="number"
-              name="size"
-              onChange={handleInputChange}
-              id="tooltipSize"
-            />
-          </div>
-          <div>
-            <div>Padding</div>
-            <Input
-              value={formData.padding}
-              placeholder="Enter Padding (px)"
-              type="number"
-              name="padding"
-              onChange={handleInputChange}
-              id="tooltipPadding"
-            />
-          </div>
-        </div>
-
-        <div>
-          <div>Text Color</div>
-          <Input
-            value={formData.colour}
-            placeholder="#161716"
-            type="text"
-            name="colour"
-            onChange={handleInputChange}
-            id="tooltipColour"
+            id="tooltipPadding"
           />
         </div>
       </div>
-      <div>
-        <div>Background Color</div>
+
+      <div className="input_container">
+        <div className="heading">Text Color</div>
+        <Input
+          value={formData.colour}
+          placeholder="#161716"
+          type="text"
+          name="colour"
+          onChange={handleInputChange}
+          id="tooltipColour"
+        />
+      </div>
+
+      <div className="input_container">
+        <div className="heading">Background Color</div>
         <Input
           value={formData.background}
           placeholder="#3d9470"
@@ -287,9 +286,9 @@ function Form() {
       </div>
 
       {/* Flex row comps */}
-      <div>
-        <div>
-          <div>Corner Radius</div>
+      <div className="flex justify-between">
+        <div className="input_container">
+          <div className="heading">Corner Radius</div>
           <Input
             value={formData.cornerRad}
             placeholder="Corner Radius (px)"
@@ -299,8 +298,8 @@ function Form() {
             id="tooltipCornerRadius"
           />
         </div>
-        <div>
-          <div>Tooltip Width</div>
+        <div className="input_container">
+          <div className="heading">Tooltip Width</div>
           <Input
             value={formData.width}
             placeholder="Enter tooltip width"
@@ -313,9 +312,9 @@ function Form() {
       </div>
 
       {/* Flex row comps */}
-      <div>
-        <div>
-          <div>Arrow Widht</div>
+      <div className="flex justify-between">
+        <div className="input_container">
+          <div className="heading">Arrow Widht</div>
           <Input
             value={formData.arrowWidth}
             placeholder="Enter Arrow width"
@@ -325,8 +324,8 @@ function Form() {
             id="tooltipArrowWidth"
           />
         </div>
-        <div>
-          <div>Arrow Height</div>
+        <div className="input_container">
+          <div className="heading">Arrow Height</div>
           <Input
             value={formData.arrowHeight}
             placeholder="Enter Arrow Height"

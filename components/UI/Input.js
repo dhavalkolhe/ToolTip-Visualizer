@@ -2,6 +2,7 @@ const Input = ({ value, id, name, placeholder, type, onChange }) => {
   return (
     <>
       <input
+        className="input"
         type={type}
         name={name}
         value={value}
