@@ -30,3 +30,11 @@ body {
 .heading {
   @apply font-medium;
 }
+
+.btnsContainer {
+  @apply flex justify-around items-center m-2;
+}
+
+.btn {
+  @apply bg-white py-1 px-3 rounded-md font-medium;
+}
