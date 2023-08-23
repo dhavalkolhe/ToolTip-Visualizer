@@ -1,12 +1,36 @@
 import React from "react";
 
-function Tooltip() {
+function Tooltip({ data }) {
+  const dynamicArrowStyle = {
+    position: "absolute",
+    backgroundColor: `${data.background}`,
+    bottom: "-1.5rem",
+    left: "50%",
+    transform: `translateX(-50%) rotate(45deg)`,
+    width: `${data.arrowWidth}px`,
+    height: `${data.arrowHeight}px`,
+  };
+
+  const dynamicStyle = {
+    marginTop: "1rem",
+    position: "absolute",
+    left: "50%",
+    transform: "translateX(-50%)",
+    maxHeight: "100px",
+    overflowX: "hidden",
+    overflowY: "auto",
+    fontSize: `${data.size}px`,
+    padding: `${data.padding}px`,
+    color: `${data.colour}`,
+    backgroundColor: `${data.background}`,
+    borderRadius: `${data.cornerRad}px`,
+    width: `${data.width}px`,
+  };
+
   return (
     <>
-      <div className="absolute bg-black -bottom-6 left-1/2 -translate-x-1/2 w-4 h-4 rotate-45"></div>
-      <div className="mt-4 absolute left-1/2 -translate-x-1/2 max-h-[100px] overflow-x-hidden overflow-y-auto no-scrollbar text-sm p-2 text-white bg-black rounded-lg w-15">
-        ToolTip text ghsakdj
-      </div>
+      <div style={dynamicArrowStyle}></div>
+      <div style={dynamicStyle}>{data.text}</div>
     </>
   );
 }

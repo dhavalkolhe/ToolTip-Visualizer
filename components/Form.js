@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { AppContext } from "../context/AppContextProvider.js";
 
 // UI Import
@@ -42,6 +42,10 @@ function Form() {
     arrowWidth: 0,
     arrowHeight: 0,
   });
+
+  useEffect(() => {
+    setFormData(button1Properties);
+  }, []);
 
   //   Handling form changes
   const handleTargetBtnChange = (e) => {
@@ -167,9 +171,8 @@ function Form() {
   };
 
   const handleInputChange = (name, val) => {
-    setFormData((prev) => {
+    setFormData(() => {
       const updatedFormData = {
-        ...prev,
         [name]: val,
       };
 
