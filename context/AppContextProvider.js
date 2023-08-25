@@ -5,7 +5,7 @@ export const AppContext = createContext(null);
 export default function AppContextProvider({ children }) {
   const [button1Properties, setButton1Properties] = useState({
     isButtonActive: true,
-    text: "Tooltip for button 1",
+    text: "Hey",
     size: 16,
     padding: 5,
     colour: "#ffffff",
