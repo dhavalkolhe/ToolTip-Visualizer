@@ -1,6 +1,6 @@
 import React from "react";
 
-const Tooltip = ({ data, children, position = "top", customClassName }) => {
+const Tooltip = ({ data, children }) => {
   const tooltipStyles = `
     .tooltip {
       align-items: center;
@@ -84,7 +84,7 @@ const Tooltip = ({ data, children, position = "top", customClassName }) => {
     }
   `;
 
-  const tooltipClasses = `tooltip tooltip-${position} ${customClassName || ""}`;
+  const tooltipClasses = `tooltip tooltip-${data.position}`;
 
   return (
     <>

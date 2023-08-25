@@ -14,6 +14,7 @@ export default function AppContextProvider({ children }) {
     width: 150,
     arrowWidth: 15,
     arrowHeight: 15,
+    position: "bottom",
   });
 
   const [button2Properties, setButton2Properties] = useState({
@@ -27,6 +28,7 @@ export default function AppContextProvider({ children }) {
     width: 150,
     arrowWidth: 15,
     arrowHeight: 15,
+    position: "bottom",
   });
 
   const [button3Properties, setButton3Properties] = useState({
@@ -40,6 +42,7 @@ export default function AppContextProvider({ children }) {
     width: 150,
     arrowWidth: 15,
     arrowHeight: 15,
+    position: "bottom",
   });
 
   const [button4Properties, setButton4Properties] = useState({
@@ -53,6 +56,7 @@ export default function AppContextProvider({ children }) {
     width: 150,
     arrowWidth: 15,
     arrowHeight: 15,
+    position: "bottom",
   });
 
   const [button5Properties, setButton5Properties] = useState({
@@ -66,6 +70,7 @@ export default function AppContextProvider({ children }) {
     width: 150,
     arrowWidth: 15,
     arrowHeight: 15,
+    position: "bottom",
   });
 
   const contextValue = {

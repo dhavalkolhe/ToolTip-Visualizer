@@ -4,6 +4,7 @@ import { AppContext } from "../context/AppContextProvider.js";
 // UI Import
 import Input from "./UI/Input";
 import Select from "./UI/Select";
+import Radio from "./UI/Radio.js";
 
 function Form() {
   // importing context
@@ -29,6 +30,13 @@ function Form() {
     { text: "Button 5", value: "btn5" },
   ];
 
+  const positionOptions = [
+    { value: "top", text: "Top" },
+    { value: "bottom", text: "Bottom" },
+    { value: "left", text: "Left" },
+    { value: "right", text: "Right" },
+  ];
+
   //   State definitions
   const [activeButton, setActiveButton] = useState("btn1");
   const [formData, setFormData] = useState({
@@ -41,6 +49,7 @@ function Form() {
     width: 0,
     arrowWidth: 0,
     arrowHeight: 0,
+    position: "",
   });
 
   useEffect(() => {
@@ -237,6 +246,14 @@ function Form() {
           id="tooltiptext"
         />
       </div>
+      <div className="input_container">
+        <div className="heading">Tooltip Position</div>
+        <Radio
+          selectedValue={formData.position}
+          options={positionOptions}
+          onChange={(value) => handleInputChange("position", value)}
+        />
+      </div>
 
       {/* Flex row comps */}
       <div className="flex justify-between">
@@ -266,9 +283,10 @@ function Form() {
 
       <div className="input_container">
         <div className="heading">Text Color</div>
+
         <Input
           value={formData.colour}
-          placeholder="#161716"
+          placeholder="red"
           type="text"
           name="colour"
           onChange={handleInputChange}
@@ -317,7 +335,7 @@ function Form() {
       {/* Flex row comps */}
       <div className="flex justify-between">
         <div className="input_container">
-          <div className="heading">Arrow Widht</div>
+          <div className="heading">Arrow Width</div>
           <Input
             value={formData.arrowWidth}
             placeholder="Enter Arrow width"
