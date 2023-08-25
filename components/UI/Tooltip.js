@@ -38,11 +38,12 @@ const Tooltip = ({ data, children }) => {
     .tooltip-content {
       color: ${data.colour};
       font-size: ${data.size}px;
-      width: ${data.width}px
+      width: ${data.width}px;
+      overflow: hidden;
     }
 
     .tooltip.tooltip-top {
-      top: calc(var(--tooltip-spacing, 50px) * -1);
+      top: calc(var(--tooltip-spacing, 45px) * -1);
     }
 
     .tooltip.tooltip-top::before {
@@ -52,7 +53,7 @@ const Tooltip = ({ data, children }) => {
     }
 
     .tooltip.tooltip-right {
-      left: calc(100% + var(--tooltip-spacing, 40px));
+      left: calc(100% + var(--tooltip-spacing, 10px));
       top: 0;
     }
 
@@ -63,7 +64,7 @@ const Tooltip = ({ data, children }) => {
     }
 
     .tooltip.tooltip-bottom {
-      bottom: calc(var(--tooltip-spacing, 50px) * -1);
+      bottom: calc(var(--tooltip-spacing, 40px) * -1);
     }
 
     .tooltip.tooltip-bottom::before {
@@ -73,7 +74,7 @@ const Tooltip = ({ data, children }) => {
     }
 
     .tooltip.tooltip-left {
-      right: calc(100% + var(--tooltip-spacing, 40px));
+      right: calc(100% + var(--tooltip-spacing, 10px));
       top: 0;
     }
 

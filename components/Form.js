@@ -180,8 +180,9 @@ function Form() {
   };
 
   const handleInputChange = (name, val) => {
-    setFormData(() => {
+    setFormData((prev) => {
       const updatedFormData = {
+        ...prev,
         [name]: val,
       };
 
