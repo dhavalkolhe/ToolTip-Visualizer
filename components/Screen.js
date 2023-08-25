@@ -13,8 +13,10 @@ function Screen() {
     button5Properties,
   } = useContext(AppContext);
 
+  // State variable to store show tip status for a particular button
   const [showTip, setShowTip] = useState(0);
 
+  // Hover helper functions
   const handleMouseHover = (btnNumber) => {
     setShowTip(btnNumber);
   };
@@ -22,6 +24,7 @@ function Screen() {
     setShowTip(0);
   };
 
+  // Screen UI
   return (
     <div className="h-[80%] flex flex-col justify-between bg-black bg-opacity-25 outline outline-[15px] outline-black p-2 rounded-xl w-[20%]">
       <div className="btnsContainer">

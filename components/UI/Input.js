@@ -1,3 +1,5 @@
+// custom Input component
+
 const Input = ({ value, id, name, placeholder, type, onChange }) => {
   return (
     <>

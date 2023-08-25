@@ -47,9 +47,6 @@ body {
   @apply font-medium;
 }
 
-.radio_input {
-}
-
 @layer utilities {
   @variants responsive {
     /* Hide scrollbar for Chrome, Safari and Opera */

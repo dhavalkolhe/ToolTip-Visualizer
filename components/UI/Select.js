@@ -1,3 +1,5 @@
+// custom select component
+
 const Select = ({ value, options, onChange }) => {
   return (
     <select value={value} onChange={onChange} className="input">

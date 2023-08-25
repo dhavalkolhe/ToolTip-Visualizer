@@ -1,5 +1,6 @@
 import React from "react";
 
+// Dynamic Tooltip component
 const Tooltip = ({ data, children }) => {
   const tooltipStyles = `
     .tooltip {

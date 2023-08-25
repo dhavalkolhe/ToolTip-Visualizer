@@ -7,6 +7,13 @@ Welcome to the repository for the Frontend Development Internship's tooltip app 
 
 
 
+## Deployed Link
+
+```bash
+  https://tool-tip-visualizer.vercel.app
+```
+
+
 ## Run Locally
 
 Clone the project

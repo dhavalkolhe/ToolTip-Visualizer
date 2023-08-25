@@ -3,9 +3,10 @@ import React, { createContext, useState } from "react";
 export const AppContext = createContext(null);
 
 export default function AppContextProvider({ children }) {
+  // Context properties for each button
   const [button1Properties, setButton1Properties] = useState({
     isButtonActive: true,
-    text: "Hey",
+    text: "Tooltip for button 1",
     size: 16,
     padding: 5,
     colour: "#ffffff",
@@ -73,6 +74,7 @@ export default function AppContextProvider({ children }) {
     position: "bottom",
   });
 
+  // exporting state in context
   const contextValue = {
     button1Properties,
     setButton1Properties,
